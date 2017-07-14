@@ -1,0 +1,21 @@
+<form novalidate 
+[formGroup]="addPersonFormGroup" 
+(ngSubmit)="onSubmit()"
+
+>
+
+<input type="text" formControlName="fname" placeholder="First Name">
+<div class="error" *ngIf="addPersonFormGroup.get('fname').hasError('required') && addPersonFormGroup.get('fname').touched">
+        Name is required
+</div>
+
+
+
+<input type="text" formControlName="lname" placeholder="Last Name">
+<input type="text" formControlName="sname" placeholder="Spouce Name">
+
+<input type="email" formControlName="email" placeholder="Email">
+
+<button type="submit">Submit</button>
+
+</form>

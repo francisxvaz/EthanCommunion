@@ -1,0 +1,37 @@
+.card{
+    border:1px solid lightgray;
+    width: 50%;
+    padding-top:20px;
+    margin:auto;
+    background:url("../assets/cup.jpg");
+    height: 700px;
+    background-size: 800px 1160px;
+    background-repeat: no-repeat;
+    -ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-weight: bold;
+    margin-top:10px;
+    width: 50%;
+    font-size: 2em;
+    background-color:rgba(0, 0, 0, 0.5);
+    opacity: 0.4;
+}
+
+.main{
+    margin-top:10px;
+    width: 50%;}
+
+.main em{
+   font-family: 'Monsieur La Doulaise', cursive;
+   font-size: 3em;
+    width:1200px;
+    display: block;
+    font-weight: bold;
+}
+
+.subFooter{
+    margin-top:10px;
+}
+
