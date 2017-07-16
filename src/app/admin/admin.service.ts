@@ -13,8 +13,6 @@ export class PersonService {
     }
 
     add(person: Person){
-         console.log('In '+ JSON.stringify(person));
-         
+        this.http.post('',person);
     }
-    
 }

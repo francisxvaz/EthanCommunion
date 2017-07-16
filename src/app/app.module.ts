@@ -8,6 +8,7 @@ import "@angular/material/prebuilt-themes/indigo-pink.css";
 import { ReactiveFormsModule } from '@angular/forms'
 
 import { MaterialModule } from '@angular/material';
+import { AdminModule } from './admin/admin.module';
 
 import 'hammerjs';
 import { TestService } from "app/test/test.service";
@@ -15,14 +16,16 @@ import { HomeComponent } from "app/admin/home.component";
 import { AddComponent } from './admin/add/add.component';
 import { PersonService } from "app/admin/admin.service";
 import { HttpModule } from "@angular/http";
+import { ListComponent } from "app/admin/list/list.component";
 
 
 
 export const routes : Routes = [
-  { path:'', component: AddComponent},
+  { path:'', component: ListComponent},
   { path:'home', component: TestComponent},
   { path:'admin', component: HomeComponent},
-  { path:'admin/add', component: AddComponent}
+  { path:'admin/add', component: AddComponent},
+  { path:'admin/list', component: ListComponent}
 ];
 
 @NgModule({
@@ -33,6 +36,7 @@ export const routes : Routes = [
     AddComponent
   ],
   imports: [
+    AdminModule,
     BrowserModule,
     MaterialModule,
     HttpModule,
