@@ -7,17 +7,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import "@angular/material/prebuilt-themes/indigo-pink.css";
 import { ReactiveFormsModule } from '@angular/forms'
 
-import { 
-    MdCardModule,
-    MdButtonModule,
-    MdIconModule,
-    MdIconRegistry,
-    MdTooltipModule,
-    MdInputModule,
-    MdInputContainer,
-    
- 
-  } from '@angular/material';
+import { MaterialModule } from '@angular/material';
 
 import 'hammerjs';
 import { TestService } from "app/test/test.service";
@@ -44,18 +34,13 @@ export const routes : Routes = [
   ],
   imports: [
     BrowserModule,
-    MdCardModule,
-    MdButtonModule,
-    MdIconModule,
-    MdTooltipModule,
-    MdInputModule,
+    MaterialModule,
     HttpModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
     ],
   providers: [
-    MdIconRegistry,
     TestService,
     PersonService
   ],
