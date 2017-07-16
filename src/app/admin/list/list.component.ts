@@ -8,12 +8,11 @@ import { Person } from "app/admin/person";
 })
 export class ListComponent implements OnInit {
 
-  people : Person[] =  [
-    { fName : "Arun", lName : "DSouza", sName : "Lallita", email : "arun@arun.com"  }
-  ];
+  
 
   constructor() { }
 
+  
   ngOnInit() {
   }
 
