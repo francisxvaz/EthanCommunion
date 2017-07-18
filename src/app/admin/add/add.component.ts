@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
-import { PersonService } from "app/admin/admin.service";
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { PersonService } from 'app/admin/admin.service';
 
 @Component({
   selector: 'app-add',
@@ -11,18 +11,27 @@ export class AddComponent implements OnInit {
 
   addPersonFormGroup: FormGroup;
 
-  constructor(private fb:FormBuilder,private _person:PersonService) { }
+  constructor(private fb: FormBuilder,private _person: PersonService) { }
 
   ngOnInit() {
     this.addPersonFormGroup = this.fb.group({
-        fname:['Arun', Validators.required],
-        lname:['DSouza', Validators.required],
-        sname:['Lallita', Validators.required],
-        email:['arun@arun.com', Validators.required],
+        familyName: ['', Validators.required],
+        invited: [true, Validators.required],
+        email: ['', Validators.required],
+        line1: ['', Validators.required],
+        line2: ['', Validators.required],
+        states : [
+          {value: 'NSW', viewValue: 'New South Wales'},
+          {value: 'VIC', viewValue: 'Victoria'}
+        ],
+        country: [''],
+        postcode: [''],
+        members: [
+          { fname: '', relation: '', invitationAccepted : true }
+        ]
     });
   }
-
-  onSubmit(){
+  onSubmit() {
     this._person.add(this.addPersonFormGroup.value);
   }
 }
