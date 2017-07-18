@@ -4,19 +4,70 @@
  <md-card>
       <md-card-title>Add Guest</md-card-title>
       <md-card-content>
+        <div layout="row">
+          <md-input-container>
+            <label>City</label>
+            <input type="text" mdInput formControlName="familyName" placeholder="Family Name">
+          </md-input-container>
+        </div>
+              <div layout="row">
         <md-input-container>
-          <input type="text" mdInput formControlName="fname" placeholder="First Name">
+          <label>invited</label>
+          <input type="checkbox" mdcheckbox formControlName="invited" placeholder="Invited">
         </md-input-container>
+              </div>
         <md-input-container>
-          <input type="text" mdInput formControlName="lname" placeholder="Last Name">
-        </md-input-container>
-         <md-input-container>
-          <input type="text" mdInput formControlName="sname" placeholder="Spouce Name">
-        </md-input-container>
-         <md-input-container>
+          <label>Email</label>
           <input type="text" mdInput formControlName="email" placeholder="Email">
         </md-input-container>
       </md-card-content>
-      <button md-mini-fab type="submit">Add</button>
 </md-card>
-</form>
+
+<md-card>
+       <md-card-title>Address</md-card-title>
+      <md-card-content>
+        <md-input-container>
+         <label>Address Line 1</label>
+          <input type="text" mdInput formControlName="line1" placeholder="Address Line 1">
+        </md-input-container>
+        <md-input-container>
+          <label>Address Line 2</label>
+          <input type="text" mdInput formControlName="line2" placeholder="Address Line 2">
+        </md-input-container>
+         <md-input-container>
+           <label>State</label>
+          <md-select formControlName="state" placeholder="State" class="md-no-underline">
+              <md-option value="NSW">NSW</md-option>
+              <md-option value="VIC">VIC</md-option>
+          </md-select>
+        </md-input-container>
+         <md-input-container>
+           <label>Country</label>
+          <input type="text" mdInput formControlName="country" placeholder="Country">
+        </md-input-container>
+        <md-input-container>
+            <label>Post code</label>
+            <input type="text" mdInput formControlName="postcode" placeholder="Post Code">
+        </md-input-container>
+      </md-card-content>
+</md-card>
+
+<md-card>
+       <md-card-title>Member</md-card-title> 
+      <md-card-content>
+        <md-input-container>
+          <label>First Name</label>
+          <input type="text" mdInput formControlName="fName" placeholder="First Name">
+        </md-input-container>
+        <md-input-container>
+          <label>Relation</label>
+          <input type="text" mdInput formControlName="relation" placeholder="Relation">
+        </md-input-container>
+         <md-input-container>
+           <label>invitation Accepted</label>
+          <input type="checkbox" mdInput formControlName="invitationAccepted" placeholder="invitationAccepted">
+        </md-input-container>
+      </md-card-content>
+</md-card>
+
+<button md-mini-fab type="submit">Add</button>
