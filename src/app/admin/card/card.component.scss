@@ -1,14 +1,61 @@
-.container{
-    display: flex-inline;
-    justify-content: center;
-    background-color: rgb(37, 74, 120);
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+
+}
+
+.container-item {
+  background-color: rgb(37, 74, 120);
+  min-height: 50em;
+  min-width: 35em;
+  flex:1;
+  border-color: orange;
+  border-style: double;
+  border-width: 25px;
+}
+
+.container-img{
+    text-align: center;
+}
+
+.container-item--bottom {
+  align-self: flex-end;
 }
 
 .golden{
     color: rgb(242, 196, 96);
+    text-align: center;
 }
 
 .white{
     color: #FFF;
+    text-align: center;
 }
+
+.large{
+    font-size: 1em;
+}
+
+.itinerary{
+    flex-wrap: wrap;
+    max-width: 50em;
+    padding: 10px;
+}
+
+.date{
+    font-size: 2em;
+}
+
+.time{
+    
+}
+
+.action{
+    margin: 10px;
+}
+
+
 
