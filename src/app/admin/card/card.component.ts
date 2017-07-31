@@ -10,8 +10,13 @@ export class CardComponent {
   sub: any;
   name: string;
   id: string;
+  message: string;
+  accepted: boolean;
+
   constructor(private route: ActivatedRoute) {
-    console.log('to base: ' + btoa('ARUN'));
+    this.message = 'We would like to invite you all for';
+    this.accepted = false;
+    console.log('to base: ' + btoa('ARUN DSOUZA'));
      this.sub = this.route.params.subscribe(params => {
        this.id = params['id'];
        this.name = atob(this.id);
@@ -19,9 +24,8 @@ export class CardComponent {
   }
 
   action() {
-    // console.log('to base: ' + btoa('Arun'));
-    // console.log('from base:' + atob('YXJ1bg=='));
-    // console.log(`${this.name} has accepted the invitation for Ethan's communion`) ;
+    this.accepted = true;
+    this.message = 'THANK YOU FOR ACCEPTING THE INVITATION FOR';
   }
 }
 

@@ -5,17 +5,17 @@
     </div>
     <div class="white caps">
       <h3>Dearest {{ name }} and FAMILY</h3>
-      <div>We would like to invite you all for</div>
+      <div class="message">{{ message }}</div>
     </div>
     <div class="golden large">
       <h1>Ethan's First Holy Communion</h1>
     </div>
 
-    <div class="golden small ">
+    <!-- <div class="golden small ">
       <div>RSVP</div>
       <div>FRANCIS 0403698088 </div>
       <div>LEENA 046097390</div> 
-    </div>
+    </div> -->
     <div class="itinerary white">
       <div class="date">Sunday, October 15, 2017</div>
       
@@ -52,7 +52,7 @@
 
 </div>
 
- <div class="action">
+ <div class="action" *ngIf="!accepted">
       <button md-raised-button (click)=action()>Accept</button>
       <button md-raised-button>Decline</button>
     </div>

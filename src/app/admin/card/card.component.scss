@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
-
+  animation-duration: 2s;
+  animation: slidein;
 }
 
 .container-item {
@@ -55,6 +55,37 @@
 
 .action{
     margin: 10px;
+}
+
+@keyframes slidein {
+    0%   {margin-left:1500px;}
+    100% {margin-left:0px;}
+}
+
+@keyframes Op {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fontbulger {
+  0% {
+    font-size: 10px;
+  }
+  30% {
+    font-size: 15px;
+  }
+  100% {
+    font-size: 12px;
+  }
+}
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
