@@ -27,7 +27,7 @@ export const routes: Routes = [
   { path: 'admin', component: HomeComponent},
   { path: 'admin/add', component: AddComponent},
   { path: 'admin/list', component: ListComponent},
-  { path: 'admin/card', component: CardComponent}
+  { path: 'admin/card/:id', component: CardComponent}
 ];
 
 @NgModule({

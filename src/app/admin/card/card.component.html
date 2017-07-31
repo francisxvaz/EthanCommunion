@@ -4,7 +4,8 @@
       <img src="/assets/cup.png" alt="cup of life" />
     </div>
     <div class="white caps">
-      <h3>We would like to invite you and family for </h3>
+      <h3>Dearest {{ name }} and FAMILY</h3>
+      <div>We would like to invite you all for</div>
     </div>
     <div class="golden large">
       <h1>Ethan's First Holy Communion</h1>
@@ -49,11 +50,10 @@
    
   </div>
 
-   
 </div>
 
  <div class="action">
-      <button md-raised-button>Accept</button>
+      <button md-raised-button (click)=action()>Accept</button>
       <button md-raised-button>Decline</button>
     </div>
 
