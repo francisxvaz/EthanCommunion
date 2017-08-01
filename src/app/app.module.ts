@@ -1,3 +1,4 @@
+import { StarService } from './admin/star.service';
 import { CardComponent } from './admin/card/card.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,7 @@ import { TestService } from 'app/test/test.service';
 import { HomeComponent } from 'app/admin/home.component';
 import { AddComponent } from './admin/add/add.component';
 import { PersonService } from 'app/admin/admin.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from 'app/admin/list/list.component';
 
 
@@ -42,14 +43,15 @@ export const routes: Routes = [
     AdminModule,
     BrowserModule,
     MaterialModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
     ],
   providers: [
     TestService,
-    PersonService
+    PersonService,
+    StarService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,7 @@
+import { Star } from '../star';
+import { StarService } from '../star.service';
 import { Component, OnInit } from '@angular/core';
-import { Person } from "app/admin/person";
+import { Person } from 'app/admin/person';
 
 @Component({
   selector: 'app-list',
@@ -8,12 +10,16 @@ import { Person } from "app/admin/person";
 })
 export class ListComponent implements OnInit {
 
-  
+  result: any;
 
-  constructor() { }
-
-  
+  constructor(private starService: StarService) { }
   ngOnInit() {
-  }
+    console.log('inside oninit');
+    this.starService.getStars().subscribe(data => {
+      
+      this.result = data;
 
+      console.log(this.result);
+    });
+  }
 }
