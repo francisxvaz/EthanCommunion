@@ -3,7 +3,7 @@ import { Star } from '../star';
 import { StarService } from '../star.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-
+import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-edit',
@@ -18,7 +18,7 @@ export class EditComponent implements OnInit {
 
   currentStar: Star;
 
-  constructor(private fb: FormBuilder,private _starService: StarService, private router: ActivatedRoute) { }
+  constructor(private fb: FormBuilder,private _starService: StarService, private router: ActivatedRoute, public snackBar: MdSnackBar) { }
 
    ngOnInit() {
 
@@ -49,6 +49,10 @@ export class EditComponent implements OnInit {
 
   }
   onSubmit() {
-    this._starService.edit(this.starForm.value, this.id).subscribe();
+    this._starService.edit(this.starForm.value, this.id).subscribe(o => {
+      this.snackBar.open('Star updated', 'close', {
+         duration: 2000,
+      }) ;
+    });
   }
 }
