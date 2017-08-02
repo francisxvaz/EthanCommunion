@@ -11,10 +11,11 @@ export class InvitationService {
   constructor(private _http: HttpClient) { }
 
   add(accepted: boolean, id: number) {
+      console.log('accepted' + accepted + 'id = ' + id)
       const data = {
-        id,
+        starId: id,
         accepted: accepted
       }
-      return this._http.put('http://localhost:58215/api/stars/invitaion', data);
+      return this._http.post('http://localhost:58215/api/invitaion/accept', data);
   }
 }

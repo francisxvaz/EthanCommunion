@@ -1,3 +1,4 @@
+import { InvitationService } from './admin/invitation.service';
 import { EditComponent } from './admin/edit/edit.component';
 import { StarService } from './admin/star.service';
 import { CardComponent } from './admin/card/card.component';
@@ -54,7 +55,8 @@ export const routes: Routes = [
   providers: [
     TestService,
     PersonService,
-    StarService
+    StarService,
+    InvitationService
   ],
   bootstrap: [AppComponent]
 })
