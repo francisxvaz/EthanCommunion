@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Star } from '../star';
 import { StarService } from '../star.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,13 +12,17 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class EditComponent implements OnInit {
 
+  id: number;
+
   starForm: FormGroup;
 
   currentStar: Star;
 
-  constructor(private fb: FormBuilder,private _starService: StarService) { }
+  constructor(private fb: FormBuilder,private _starService: StarService, private router: ActivatedRoute) { }
 
-  ngOnInit() {
+   ngOnInit() {
+
+    this.router.params.subscribe(o => this.id = o['id']);
 
     this.starForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -29,9 +34,8 @@ export class EditComponent implements OnInit {
       infants: ['', Validators.required]
     });
 
-    this._starService.getStar(1).subscribe(data => {
+    this._starService.getStar(this.id).subscribe(data => {
             this.currentStar = data;
-            console.log(JSON.stringify(data));
             this.starForm.setValue({
               firstName: data.firstName,
               lastName: data.lastName,
@@ -45,6 +49,6 @@ export class EditComponent implements OnInit {
 
   }
   onSubmit() {
-    this._starService.edit(this.starForm.value, 1).subscribe();
+    this._starService.edit(this.starForm.value, this.id).subscribe();
   }
 }

@@ -6,7 +6,6 @@ export class TestService {
   constructor() { }
 
   post(resp:boolean): void{
-    console.log(resp);
   }
 
   get(id:string){

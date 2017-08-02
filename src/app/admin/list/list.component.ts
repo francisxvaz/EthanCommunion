@@ -14,7 +14,6 @@ export class ListComponent implements OnInit {
 
   constructor(private starService: StarService) { }
   ngOnInit() {
-    console.log('inside oninit');
     this.starService.getStars().subscribe(data => {
             this.result = data;
     });
