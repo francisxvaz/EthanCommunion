@@ -13,7 +13,7 @@ export class CardComponent {
   message: string;
   accepted: boolean;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, invitation: InvitationService) {
     this.message = 'We would like to invite you all for';
     this.accepted = false;
     console.log('to base: ' + btoa('ARUN DSOUZA'));
@@ -24,6 +24,7 @@ export class CardComponent {
   }
 
   action() {
+
     this.accepted = true;
     this.message = 'THANK YOU FOR ACCEPTING THE INVITATION FOR';
   }
