@@ -1,3 +1,4 @@
+import { EditComponent } from './admin/edit/edit.component';
 import { StarService } from './admin/star.service';
 import { CardComponent } from './admin/card/card.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +28,7 @@ export const routes: Routes = [
   { path: 'home', component: TestComponent},
   { path: 'admin', component: HomeComponent},
   { path: 'admin/add', component: AddComponent},
+  { path: 'admin/edit/:id', component: EditComponent},
   { path: 'admin/list', component: ListComponent},
   { path: 'admin/card/:id', component: CardComponent}
 ];
@@ -37,7 +39,8 @@ export const routes: Routes = [
     TestComponent,
     HomeComponent,
     AddComponent,
-    CardComponent
+    CardComponent,
+    EditComponent
   ],
   imports: [
     AdminModule,

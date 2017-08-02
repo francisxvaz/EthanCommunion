@@ -1,4 +1,5 @@
-export class Star{
+export class Star {
+    id: number;
     firstName: string;
     lastName: string;
     email: string;

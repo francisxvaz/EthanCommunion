@@ -1,4 +1,4 @@
-<!-- <table class="table">
+<table class="table">
   <tr>
     <td>First Name</td>
     <td>Last Name</td>
@@ -7,6 +7,7 @@
     <td>Children</td>
     <td>infants</td>
     <td>Password</td>
+    <td>Edit</td>
   </tr>
   <tr *ngFor="let star of result">
     <td>{{star.firstName}}</td>
@@ -16,38 +17,6 @@
     <td>{{star.children}}</td>
     <td>{{star.infants}}</td>
     <td><a href="http://localhost:4200/admin/card/{{star.password}}">Email Link</a></td>
+    <td><a href="http://localhost:4200/admin/edit/{{star.id}}">Edit</a></td>
   </tr>
-</table> -->
-
-<div ng-non-bindable *ngFor="let star of result">
-  <span>"{{ 'new Star(){firstName={{ star.FirstName }}}' }}"</span>
-
-
-
-  
-<!--   
-
-  "new Star()
-                {
-                    FirstName ="" "Arun",
-                    LastName = "Dsouza",
-                    Email = "eyebrowman@gmail.com",
-                    Mobile = "0403698088",
-                    Adults = 4,
-                    Children = 2,
-                    Infant = 0,
-                    Password = GetBase64Password("Arun Dsouza"),
-                    Addresses = new List<Address>()
-                    {
-                       new Address()
-                       {
-                           AddressLine1 = "Line 1",
-                           AddressLine2 = "Line 2",
-                           State = "NSW",
-                           Country = "Australia",
-                           Postcode = "2145",
-                       }
-                    }
-                } -->
-
-</div>
+</table>

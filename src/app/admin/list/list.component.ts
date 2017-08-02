@@ -10,16 +10,13 @@ import { Person } from 'app/admin/person';
 })
 export class ListComponent implements OnInit {
 
-  result: any;
+  result: Star[];
 
   constructor(private starService: StarService) { }
   ngOnInit() {
     console.log('inside oninit');
     this.starService.getStars().subscribe(data => {
-      
-      this.result = data;
-
-      console.log(this.result);
+            this.result = data;
     });
   }
 }

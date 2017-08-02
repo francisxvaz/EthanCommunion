@@ -1,6 +1,7 @@
+import { StarService } from '../star.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { PersonService } from 'app/admin/admin.service';
+
 
 @Component({
   selector: 'app-add',
@@ -9,29 +10,22 @@ import { PersonService } from 'app/admin/admin.service';
 })
 export class AddComponent implements OnInit {
 
-  addPersonFormGroup: FormGroup;
+  startForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private _person: PersonService) { }
+  constructor(private fb: FormBuilder,private _starService: StarService) { }
 
   ngOnInit() {
-    this.addPersonFormGroup = this.fb.group({
-        familyName: ['', Validators.required],
-        invited: [true, Validators.required],
-        email: ['', Validators.required],
-        line1: ['', Validators.required],
-        line2: ['', Validators.required],
-        states : [
-          {value: 'NSW', viewValue: 'New South Wales'},
-          {value: 'VIC', viewValue: 'Victoria'}
-        ],
-        country: [''],
-        postcode: [''],
-        members: [
-          { fname: '', relation: '', invitationAccepted : true }
-        ]
+    this.startForm = this.fb.group({
+        firstName: ['Francis', Validators.required],
+        lastName: ['Vaz', Validators.required],
+        email: ['francisxvaz@gmail.com', Validators.required],
+        mobile: ['0403698088'],
+        adults: ['1', Validators.required],
+        children: ['0', Validators.required],
+        infants: ['0', Validators.required]
     });
   }
   onSubmit() {
-    this._person.add(this.addPersonFormGroup.value);
+    this._starService.create(this.startForm.value).subscribe();
   }
 }
