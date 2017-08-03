@@ -1,4 +1,4 @@
-import { InvitationService } from '../invitation.service';
+import { StarService } from '../star.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 
@@ -13,7 +13,7 @@ export class CardComponent {
   message: string;
   accepted: boolean;
 
-  constructor(private route: ActivatedRoute,private invitationService: InvitationService) {
+  constructor(private route: ActivatedRoute,private startService: StarService) {
     this.message = 'We would like to invite you all for';
     this.accepted = false;
      this.sub = this.route.params.subscribe(params => {
@@ -24,7 +24,7 @@ export class CardComponent {
 
   action() {
     console.log(this.id);
-     this.invitationService.add(true, +this.id).subscribe();
+     this.startService.accept(true, this.id).subscribe();
     // this.invitationService.add(true, 1).subscribe();
     // this.accepted = true;
     // this.message = 'THANK YOU FOR ACCEPTING THE INVITATION FOR';

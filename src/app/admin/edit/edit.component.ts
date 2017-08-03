@@ -31,7 +31,8 @@ export class EditComponent implements OnInit {
       mobile: [''],
       adults: ['', Validators.required],
       children: ['', Validators.required],
-      infants: ['', Validators.required]
+      infants: ['', Validators.required],
+      password: ['', Validators.required]
     });
 
     this._starService.getStar(this.id).subscribe(data => {
@@ -43,7 +44,8 @@ export class EditComponent implements OnInit {
               mobile: data.mobile,
               adults: data.adults,
               children: data.children,
-              infants: data.infants
+              infants: data.infants,
+              password: data.password
             });
     });
 

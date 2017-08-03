@@ -10,6 +10,14 @@ export class StarService {
 
   constructor(private _http: HttpClient) { }
 
+  accept(accepted: boolean, token: string) {
+    const data = {
+        accepted,
+        token
+    };
+    return this._http.put('http://localhost:58215/api/stars/accept', data);
+  }
+
   getStars() {
       return this._http.get<Star[]>('http://localhost:58215/api/stars');
   }
