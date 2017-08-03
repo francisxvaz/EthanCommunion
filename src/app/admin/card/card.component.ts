@@ -1,5 +1,4 @@
 import { InvitationService } from '../invitation.service';
-import { any } from 'codelyzer/util/function';
 import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 

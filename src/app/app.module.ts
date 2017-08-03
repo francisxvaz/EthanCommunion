@@ -1,3 +1,4 @@
+import { LogHttpInterceptor } from './http.interceptor';
 import { InvitationService } from './admin/invitation.service';
 import { EditComponent } from './admin/edit/edit.component';
 import { StarService } from './admin/star.service';
@@ -19,7 +20,7 @@ import { TestService } from 'app/test/test.service';
 import { HomeComponent } from 'app/admin/home.component';
 import { AddComponent } from './admin/add/add.component';
 import { PersonService } from 'app/admin/admin.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ListComponent } from 'app/admin/list/list.component';
 
 
@@ -56,7 +57,8 @@ export const routes: Routes = [
     TestService,
     PersonService,
     StarService,
-    InvitationService
+    InvitationService,
+    { provide: HTTP_INTERCEPTORS, useClass: LogHttpInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
