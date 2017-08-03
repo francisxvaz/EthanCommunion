@@ -1,9 +1,12 @@
+import { StarReducer } from '../../star.reducer';
 import { ActivatedRoute } from '@angular/router';
 import { Star } from '../star';
 import { StarService } from '../star.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {MdSnackBar} from '@angular/material';
+import { ADD_STAR, EDIT_STAR, GET_STAR } from '../../star.reducer';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-edit',
@@ -18,7 +21,9 @@ export class EditComponent implements OnInit {
 
   currentStar: Star;
 
-  constructor(private fb: FormBuilder,private _starService: StarService, private router: ActivatedRoute, public snackBar: MdSnackBar) { }
+  constructor(private fb: FormBuilder, private _starService: StarService,
+              private router: ActivatedRoute, public snackBar: MdSnackBar,
+              private _store: Store<any>) { }
 
    ngOnInit() {
 
@@ -51,10 +56,12 @@ export class EditComponent implements OnInit {
 
   }
   onSubmit() {
-    this._starService.edit(this.starForm.value, this.id).subscribe(o => {
-      this.snackBar.open('Star updated', 'close', {
-         duration: 2000,
-      }) ;
-    });
+
+    this._store.dispatch({type: EDIT_STAR, payload: this.starForm.value})
+    // this._starService.edit(this.starForm.value, this.id).subscribe(o => {
+    //   this.snackBar.open('Star updated', 'close', {
+    //      duration: 2000,
+    //   }) ;
+    // });
   }
 }

@@ -1,3 +1,5 @@
+import { StarEffects } from './admin/star.effects';
+import { StarReducer } from './star.reducer';
 import { LogHttpInterceptor } from './http.interceptor';
 import { InvitationService } from './admin/invitation.service';
 import { EditComponent } from './admin/edit/edit.component';
@@ -22,6 +24,8 @@ import { AddComponent } from './admin/add/add.component';
 import { PersonService } from 'app/admin/admin.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ListComponent } from 'app/admin/list/list.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -51,7 +55,9 @@ export const routes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    StoreModule.forRoot({ StarReducer}),
+    EffectsModule
     ],
   providers: [
     TestService,
@@ -62,4 +68,5 @@ export const routes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
